@@ -28,8 +28,12 @@ else
   exit 1
 fi
 
-echo "Change to android directory"
-cd ../android
+if [ -e android ]
+then
+  cd android
+else
+  cd ../android
+fi
 
 echo "Remove old build files"
 rm app/build/outputs/apk/*
